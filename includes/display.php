@@ -4,7 +4,7 @@ require_once('./conn.php');
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $query = $_POST['query'];
-        $sql = "SELECT * FROM palabra WHERE palabra_dic LIKE '%".$query."%' AND palabra_dic = palabra_dic";
+        $sql = "SELECT * FROM palabra WHERE palabra_dic LIKE '%".$query."%' LIMIT 1";
         $result = mysqli_query($con,$sql);
         $output = '<table class="table table-striped">
                         <tr>
